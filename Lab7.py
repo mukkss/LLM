@@ -5,9 +5,10 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 import matplotlib.pyplot as plt
 
 # Check Columns
-import seaborn as sns
 df = sns.load_dataset('titanic')
 print(df.columns)
+print(df['embarked'].value_counts())
+
 
 # Load and clean data
 df = sns.load_dataset('titanic')[['pclass', 'sex', 'age', 'sibsp', 'parch', 'fare', 'embarked', 'survived']].dropna()
