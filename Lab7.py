@@ -4,6 +4,11 @@ from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 import matplotlib.pyplot as plt
 
+# Check Columns
+import seaborn as sns
+df = sns.load_dataset('titanic')
+print(df.columns)
+
 # Load and clean data
 df = sns.load_dataset('titanic')[['pclass', 'sex', 'age', 'sibsp', 'parch', 'fare', 'embarked', 'survived']].dropna()
 df['sex'] = df['sex'].map({'male': 0, 'female': 1})
@@ -27,7 +32,7 @@ plt.show()
 
 # Evaluation
 y_pred = model.predict(X_test)
-print("Accuracy:", accuracy_score(y_test, y_pred))
-print("Precision:", precision_score(y_test, y_pred))
-print("Recall:", recall_score(y_test, y_pred))
-print("F1 Score:", f1_score(y_test, y_pred))
+print("Accuracy:", accuracy_score(y_test, y_pred)*100)
+print("Precision:", precision_score(y_test, y_pred)*100)
+print("Recall:", recall_score(y_test, y_pred)*100)
+print("F1 Score:", f1_score(y_test, y_pred)*100)
