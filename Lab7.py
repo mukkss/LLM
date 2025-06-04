@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 # Check Columns
 df = sns.load_dataset('titanic')
 print(df.columns)
+print(df['sex'].value_counts())
 print(df['embarked'].value_counts())
 
 
